@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListBox listBox1;
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -36,26 +35,8 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            listBox1 = new System.Windows.Forms.ListBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
-            // 
-            // listBox1
-            // 
-            listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            listBox1.FormattingEnabled = true;
-            listBox1.HorizontalScrollbar = true;
-            listBox1.IntegralHeight = false;
-            listBox1.ItemHeight = 24;
-            listBox1.Items.AddRange(new object[] {
-            "Udělat GUI",
-            "Pozdravit Šimu",
-            "Idk",
-            "Úkol",
-            "Další úkol"});
-            listBox1.Location = new System.Drawing.Point(22, 66);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new System.Drawing.Size(454, 316);
-            listBox1.TabIndex = 6;
             // 
             // button1
             // 
@@ -66,6 +47,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Přidej úkol";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -96,6 +78,7 @@
             this.button4.TabIndex = 5;
             this.button4.Text = "Zobraz úkol";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -128,12 +111,20 @@
             this.button7.Text = "Den";
             this.button7.UseVisualStyleBackColor = true;
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(22, 66);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(454, 316);
+            this.listBox1.TabIndex = 7;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(771, 527);
-            this.Controls.Add(listBox1);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
@@ -142,7 +133,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Řízení úkolů";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             this.ResumeLayout(false);
@@ -158,6 +149,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 
