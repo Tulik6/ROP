@@ -24,7 +24,7 @@ namespace rop
             string ukol = textBox1.Text;
             string priorita = comboBox1.SelectedItem.ToString();
             string kategorie = comboBox2.SelectedItem.ToString();
-            string datum = dateTimePicker1.Value.ToString();
+            string datum = dateTimePicker1.Value.Date.ToString();
             sw.WriteLine(ukol + ";" + priorita + ";" + kategorie + ";" + datum);
             sw.Close();
             this.Close();

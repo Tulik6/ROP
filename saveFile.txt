@@ -1,3 +1,3 @@
-aoojhoh;Střední;Zdraví;25.11.2022 20:23:41
-d;Střední;Škola;08.11.2022 20:28:55
-efww;Střední;Práce;10.11.2022 20:30:49
+naučit se;Vysoká;Práce;29.11.2022 0:00:00
+vysát;Střední;Práce;29.11.2022 0:00:00
+vyvenčit psa;Vysoká;Zdraví;29.11.2022 0:00:00
