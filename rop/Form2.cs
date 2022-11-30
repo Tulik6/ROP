@@ -25,6 +25,8 @@ namespace rop
             string priorita = comboBox1.SelectedItem.ToString();
             string kategorie = comboBox2.SelectedItem.ToString();
             string datum = dateTimePicker1.Value.Date.ToString();
+            int indexCasu = datum.IndexOf("0:00:00");
+            datum = datum.Remove(indexCasu, 7);
             sw.WriteLine(ukol + ";" + priorita + ";" + kategorie + ";" + datum);
             sw.Close();
             this.Close();
@@ -34,5 +36,9 @@ namespace rop
             this.Close(); 
         }
 
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

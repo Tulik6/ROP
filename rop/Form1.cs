@@ -104,5 +104,26 @@ namespace rop
             }
             else MessageBox.Show("Nebyl vybrán žádný úkol");            
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form1.index = listBox1.SelectedIndex;
+            if (Form1.index != -1)
+            {
+                Form4 form4 = new Form4();
+                form4.ShowDialog();
+                StreamReader sr = new StreamReader(@"..\..\..\saveFile.txt");
+                //Refresh listboxu po upravení úkolu
+                listBox1.Items.Clear();
+                while (!sr.EndOfStream)
+                {
+                    string line = sr.ReadLine();
+                    string[] ukol = line.Split(';');
+                    listBox1.Items.Add(ukol[0]);
+                }
+                sr.Close();
+            }
+            else MessageBox.Show("Nebyl vybrán úkol");
+        }
     }
 }

@@ -38,5 +38,10 @@ namespace rop
             kategorieLabel.Text = ukol[2];
             datumLabel.Text = ukol[3];       
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
