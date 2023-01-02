@@ -29,15 +29,27 @@ namespace rop
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            StreamReader sr = new StreamReader(@"..\..\..\saveFile.txt");
-            while (!sr.EndOfStream)
+            try
             {
-                //Zobrazení databáze v listboxu
-                string line = sr.ReadLine();
-                string[] ukol = line.Split(';');
-                listBox1.Items.Add(ukol[0]);
+                StreamReader sr = null;
+                using (sr = new StreamReader(@"..\..\..\saveFile.txt"))
+                {
+                    while (!sr.EndOfStream)
+                    {
+                        //Zobrazení databáze v listboxu
+                        string line = sr.ReadLine();
+                        string[] ukol = line.Split(';');
+                        listBox1.Items.Add(ukol[0]);
+                    }
+                    //sr.Close();
+                }
             }
-            sr.Close();
+            catch(FileNotFoundException)
+            {
+                MessageBox.Show("Save file nebyl nalezen, po stisknutí tlačítka se vytvoří nový");
+                StreamWriter sw = File.CreateText(@"..\..\..\saveFile.txt");
+                sw.Close();
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
