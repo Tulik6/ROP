@@ -1,2 +1,3 @@
-vysat;Střední;Práce;30.11.2022 
-vyvenčit psa;Vysoká;Zdraví;01.12.2022 
+udělat rop;Vysoká;Škola;04.01.2023;50
+uklidit;Střední;Práce;05.01.2023;x%
+naučit se češtinu;Střední;Škola;03.01.2023;x%

@@ -29,6 +29,7 @@ namespace rop
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //Vytvoření souboru pokud neexistuje
             try
             {
                 StreamReader sr = null;

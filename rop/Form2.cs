@@ -27,7 +27,9 @@ namespace rop
             string datum = dateTimePicker1.Value.Date.ToString();
             int indexCasu = datum.IndexOf("0:00:00");
             datum = datum.Remove(indexCasu, 7);
-            sw.WriteLine(ukol + ";" + priorita + ";" + kategorie + ";" + datum);
+            datum = datum.Trim();
+            string line = ukol + ";" + priorita + ";" + kategorie + ";" + datum + ";" + "x%";
+            sw.WriteLine(line);
             sw.Close();
             this.Close();
         }

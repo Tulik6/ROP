@@ -37,6 +37,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.kategorieLabel = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.splnenoLabel = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -121,7 +125,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(566, 374);
+            this.button1.Location = new System.Drawing.Point(491, 374);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -129,11 +133,47 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // trackBar1
+            // 
+            this.trackBar1.LargeChange = 10;
+            this.trackBar1.Location = new System.Drawing.Point(329, 38);
+            this.trackBar1.Maximum = 100;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBar1.Size = new System.Drawing.Size(45, 305);
+            this.trackBar1.SmallChange = 10;
+            this.trackBar1.TabIndex = 3;
+            this.trackBar1.TickFrequency = 10;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            // 
+            // splnenoLabel
+            // 
+            this.splnenoLabel.AutoSize = true;
+            this.splnenoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.splnenoLabel.Location = new System.Drawing.Point(368, 177);
+            this.splnenoLabel.Name = "splnenoLabel";
+            this.splnenoLabel.Size = new System.Drawing.Size(79, 29);
+            this.splnenoLabel.TabIndex = 4;
+            this.splnenoLabel.Text = "label5";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(572, 374);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Potvrdit";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(653, 409);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.splnenoLabel);
+            this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.datumLabel);
             this.Controls.Add(this.kategorieLabel);
@@ -146,6 +186,7 @@
             this.Name = "Form3";
             this.Text = "Form3";
             this.Load += new System.EventHandler(this.Form3_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,5 +203,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label kategorieLabel;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.Label splnenoLabel;
+        private System.Windows.Forms.Button button2;
     }
 }
