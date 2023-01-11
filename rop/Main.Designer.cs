@@ -1,6 +1,6 @@
 ﻿namespace rop
 {
-    partial class Form1
+    partial class Main
     {
         /// <summary>
         /// Vyžaduje se proměnná návrháře.
@@ -123,7 +123,7 @@
             this.listBox1.Size = new System.Drawing.Size(454, 304);
             this.listBox1.TabIndex = 7;
             // 
-            // Form1
+            // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -136,10 +136,11 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Name = "Form1";
+            this.Name = "Main";
             this.Text = "Řízení úkolů";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
+            this.MouseHover += new System.EventHandler(this.Main_MouseHover);
             this.ResumeLayout(false);
 
         }

@@ -11,9 +11,9 @@ using System.IO;
 
 namespace rop
 {
-    public partial class Form2 : Form
+    public partial class PridavaniUkolu : Form
     {
-        public Form2()
+        public PridavaniUkolu()
         {
             InitializeComponent();
         }

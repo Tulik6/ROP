@@ -1,6 +1,6 @@
 ﻿namespace rop
 {
-    partial class Form4
+    partial class UpravaUkolu
     {
         /// <summary>
         /// Required designer variable.

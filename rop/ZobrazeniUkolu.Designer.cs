@@ -1,6 +1,6 @@
 ﻿namespace rop
 {
-    partial class Form3
+    partial class ZobrazeniUkolu
     {
         /// <summary>
         /// Required designer variable.

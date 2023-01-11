@@ -11,11 +11,13 @@ using System.IO;
 
 namespace rop
 {
-    public partial class Form1 : Form
+
+    public partial class Main : Form
     {
+
         public static int index = 0;
         List<string> listUkolu = new List<string>(); //Vložení textu ze souboru do listu pro lehčí zpracování
-        public Form1()
+        public Main()
         {
             InitializeComponent();
             this.Width = 650;
@@ -56,7 +58,7 @@ namespace rop
         private void button1_Click(object sender, EventArgs e)
         {
             
-            Form2 form2 = new Form2();
+            PridavaniUkolu form2 = new PridavaniUkolu();
             form2.ShowDialog();
             listBox1.Items.Clear();
             StreamReader sr = new StreamReader(@"..\..\..\saveFile.txt");
@@ -72,10 +74,11 @@ namespace rop
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Form1.index = listBox1.SelectedIndex;
-            if (Form1.index != -1)
+            Main.index = listBox1.SelectedIndex;
+            
+            if (Main.index != -1)
             {
-                Form3 form3 = new Form3();
+                ZobrazeniUkolu form3 = new ZobrazeniUkolu();
                 form3.ShowDialog();
             }
             else MessageBox.Show("Nebyl vybrán úkol");
@@ -83,8 +86,8 @@ namespace rop
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Form1.index = listBox1.SelectedIndex;
-            if (Form1.index != -1)
+            Main.index = listBox1.SelectedIndex;
+            if (Main.index != -1)
             {
                 StreamReader sr = new StreamReader(@"..\..\..\saveFile.txt");
                 while (!sr.EndOfStream)
@@ -95,7 +98,7 @@ namespace rop
                 sr.Close();
 
                 StreamWriter sw = new StreamWriter(@"..\..\..\saveFile.txt");
-                listUkolu.RemoveAt(Form1.index);
+                listUkolu.RemoveAt(Main.index);
 
                 foreach (string ukol in listUkolu)
                 {
@@ -113,17 +116,18 @@ namespace rop
                     string[] ukol = line.Split(';');
                     listBox1.Items.Add(ukol[0]);
                 }
-                sr.Close();
+                sr.Close(); 
             }
             else MessageBox.Show("Nebyl vybrán žádný úkol");            
         }
 
+        
         private void button2_Click(object sender, EventArgs e)
         {
-            Form1.index = listBox1.SelectedIndex;
-            if (Form1.index != -1)
+            Main.index = listBox1.SelectedIndex;
+            if (Main.index != -1)
             {
-                Form4 form4 = new Form4();
+                UpravaUkolu form4 = new UpravaUkolu();
                 form4.ShowDialog();
                 StreamReader sr = new StreamReader(@"..\..\..\saveFile.txt");
                 //Refresh listboxu po upravení úkolu
@@ -137,6 +141,23 @@ namespace rop
                 sr.Close();
             }
             else MessageBox.Show("Nebyl vybrán úkol");
+        }
+
+        private void Main_MouseHover(object sender, EventArgs e)
+        {
+            if(ZobrazeniUkolu.zmenaSavu == true)
+            {
+                StreamReader sr = new StreamReader(@"..\..\..\saveFile.txt");
+                //Refresh listboxu po upravení úkolu
+                listBox1.Items.Clear();
+                while (!sr.EndOfStream)
+                {
+                    string line = sr.ReadLine();
+                    string[] ukol = line.Split(';');
+                    listBox1.Items.Add(ukol[0]);
+                }
+                sr.Close();
+            }
         }
     }
 }

@@ -11,9 +11,9 @@ using System.IO;
 
 namespace rop
 {
-    public partial class Form3 : Form
+    public partial class ZobrazeniUkolu : Form
     {
-        public Form3()
+        public ZobrazeniUkolu()
         {
             InitializeComponent();
         }
@@ -21,7 +21,6 @@ namespace rop
         List<string> listUkolu = new List<string>();
         private void Form3_Load(object sender, EventArgs e)
         {
-            
             StreamReader sr = new StreamReader(@"..\..\..\saveFile.txt");
             while(!sr.EndOfStream)
             {
@@ -31,7 +30,7 @@ namespace rop
             sr.Close();
            
 
-            string vybranyUkol = listUkolu[Form1.index];
+            string vybranyUkol = listUkolu[Main.index];
             string[] ukol = vybranyUkol.Split(';');
             ukolLabel.Text = ukol[0];
             prioritaLabel.Text = ukol[1];
@@ -51,18 +50,18 @@ namespace rop
         {
            
            splnenoLabel.Text = trackBar1.Value.ToString() + " %";
-  
         }
 
+        public static bool zmenaSavu = false;
         private void button2_Click(object sender, EventArgs e)
         {
-
+            
             //Nastavování % splnění do save filu, pokud je splnění 100%, úkol se smaže
             int splnenoProcent = trackBar1.Value;
-            string vybranyUkol = listUkolu[Form1.index];
+            string vybranyUkol = listUkolu[Main.index];
             string[] ukol = vybranyUkol.Split(';');
             string line = vybranyUkol.Replace(ukol[4], splnenoProcent.ToString());
-            listUkolu[Form1.index] = line;
+            listUkolu[Main.index] = line;
 
 
             StreamWriter sw = new StreamWriter(@"..\..\..\saveFile.txt");
@@ -74,7 +73,30 @@ namespace rop
             sw.Close();
             this.Close();
 
+            listUkolu.Clear();
+            StreamReader sr = new StreamReader(@"..\..\..\saveFile.txt");
+            while (!sr.EndOfStream)
+            {
+                string radek = sr.ReadLine();
+                listUkolu.Add(radek);
+            }
+            sr.Close();
 
+            if (trackBar1.Value == 100)
+            {
+
+                sw = new StreamWriter(@"..\..\..\saveFile.txt");
+                listUkolu.RemoveAt(Main.index);
+
+                foreach (string task in listUkolu)
+                {
+                    sw.WriteLine(task);
+                }
+                listUkolu.Clear(); //Clear listboxu aby se nevytvářely kopie úkolů
+                sw.Close();
+
+                zmenaSavu = true;
+            }
         }
     }
 }

@@ -11,9 +11,9 @@ using System.IO;
 
 namespace rop
 {
-    public partial class Form4 : Form
+    public partial class UpravaUkolu : Form
     {
-        public Form4()
+        public UpravaUkolu()
         {
             InitializeComponent();
         }
@@ -29,7 +29,7 @@ namespace rop
             }
             sr.Close();
 
-            string vybranyUkol = listUkolu[Form1.index];
+            string vybranyUkol = listUkolu[Main.index];
             string[] ukol = vybranyUkol.Split(';');
             ukolTextBox.Text = ukol[0];
             prioritaComboBox.Text = ukol[1];
@@ -52,7 +52,7 @@ namespace rop
             datum = datum.Remove(indexCasu, 7);
 
             string line = ukol + ";" + priorita + ";" + kategorie + ";" + datum;
-            listUkolu[Form1.index] = line;
+            listUkolu[Main.index] = line;
 
 
 

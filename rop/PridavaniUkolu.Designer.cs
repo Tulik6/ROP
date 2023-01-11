@@ -1,6 +1,6 @@
 ﻿namespace rop
 {
-    partial class Form2
+    partial class PridavaniUkolu
     {
         /// <summary>
         /// Required designer variable.
