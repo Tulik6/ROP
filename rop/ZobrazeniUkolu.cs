@@ -29,7 +29,6 @@ namespace rop
             }
             sr.Close();
            
-
             string vybranyUkol = listUkolu[Main.index];
             string[] ukol = vybranyUkol.Split(';');
             ukolLabel.Text = ukol[0];
@@ -94,7 +93,6 @@ namespace rop
                 }
                 listUkolu.Clear(); //Clear listboxu aby se nevytvářely kopie úkolů
                 sw.Close();
-
                 zmenaSavu = true;
             }
         }

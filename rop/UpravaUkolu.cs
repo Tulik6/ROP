@@ -45,17 +45,30 @@ namespace rop
         private void button1_Click(object sender, EventArgs e)
         {
             string ukol = ukolTextBox.Text;
+            StreamReader sr = new StreamReader(@"..\..\..\saveFile.txt");
+            string splneni = "";
+            string ukolUnchanged = listUkolu[Main.index];
+            ukolUnchanged = ukolUnchanged.Substring(0, ukolUnchanged.IndexOf(';'));
+            while (!sr.EndOfStream)
+            {
+                string s = sr.ReadLine();
+                if (s.Contains(ukolUnchanged)) splneni = s.Substring(s.LastIndexOf(';') + 1);
+            }
+            sr.Close();
             string priorita = prioritaComboBox.SelectedItem.ToString();
             string kategorie = kategorieComboBox.SelectedItem.ToString();
             string datum = dateTimePicker1.Value.Date.ToString();
             int indexCasu = datum.IndexOf("0:00:00");
             datum = datum.Remove(indexCasu, 7);
+            datum = datum.Trim();
 
-            string line = ukol + ";" + priorita + ";" + kategorie + ";" + datum;
+
+
+            string line = ukol + ";" + priorita + ";" + kategorie + ";" + datum + ";" + splneni;
             listUkolu[Main.index] = line;
 
 
-
+            
             StreamWriter sw = new StreamWriter(@"..\..\..\saveFile.txt");
             foreach (string radek in listUkolu)
             {
