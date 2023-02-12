@@ -266,5 +266,57 @@ namespace rop
             }
             sr.Close();
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            List<string> pomocnyList = new List<string>();
+            StreamReader sr = new StreamReader(@"..\..\..\saveFile.txt");
+            while (!sr.EndOfStream)
+            {
+                string line = sr.ReadLine();
+                listUkolu.Add(line);
+            }
+            sr.Close();
+
+
+
+            DateTime[] poleDat = new DateTime[listUkolu.Count];
+            for(int i = 0; i < listUkolu.Count; ++i)
+            {
+                string s = listUkolu[i];
+                string[] ukolSplit = s.Split(';');
+                poleDat[i] = DateTime.Parse(ukolSplit[3]);
+            }
+
+            Array.Sort(poleDat);
+            //Array.Reverse(poleDat);
+
+            foreach(DateTime x in poleDat)
+            {
+                MessageBox.Show(x.ToString());
+            }
+
+            for (int i = 0; i < poleDat.Length; ++i)
+            {
+                for (int j = 0; j < listUkolu.Count; ++j)
+                {
+                    string s = listUkolu[j];
+                    if (s.Contains(poleDat[i].ToString("dd/MM/yyyy")))
+                    {
+                        string[] ukol = s.Split(';');
+                        pomocnyList.Add(ukol[0]);
+                        listUkolu.RemoveAt(j);
+                    }
+                }
+            }
+
+            listBox1.Items.Clear();
+            foreach (string s in pomocnyList)
+            {
+                listBox1.Items.Add(s);
+            }
+
+
+        }
     }
 }
