@@ -1,5 +1,4 @@
-toto;Vysoká;Sociální;10.03.2023;10
-tohle;Střední;Sociální;05.02.2023;70
-todlencto;Střední;Sociální;03.02.2023;90
-wegwrg;Vysoká;Zdraví;05.02.2723;27
-xxxxxxxxxxxxxxxxxxxxxxx;Střední;Práce;05.02.2023;95
+27.2;Střední;Práce;27.02.2023;50
+30.3;Střední;Práce;30.03.2023;30
+24.3;Střední;Zdraví;24.03.2023;90
+5.3;Vysoká;Zdraví;05.03.2023;10

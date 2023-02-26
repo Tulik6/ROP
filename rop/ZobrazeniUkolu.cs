@@ -83,9 +83,13 @@ namespace rop
 
             if (trackBar1.Value == 100)
             {
+                StreamWriter sw2 = new StreamWriter(@"..\..\..\splneneUkoly.txt", true);
+                sw2.WriteLine(listUkolu[Main.index]);
+                sw2.Close();
 
                 sw = new StreamWriter(@"..\..\..\saveFile.txt");
                 listUkolu.RemoveAt(Main.index);
+
 
                 foreach (string task in listUkolu)
                 {
