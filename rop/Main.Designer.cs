@@ -96,6 +96,7 @@
             this.button5.TabIndex = 4;
             this.button5.Text = "Týden";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -106,17 +107,19 @@
             this.button6.TabIndex = 4;
             this.button6.Text = "Měsíc";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button7.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.button7.ForeColor = System.Drawing.Color.Black;
             this.button7.Location = new System.Drawing.Point(482, 66);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(109, 32);
             this.button7.TabIndex = 4;
             this.button7.Text = "Den";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // listBox1
             // 

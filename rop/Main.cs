@@ -164,6 +164,7 @@ namespace rop
         {
             List<string> pomocnyList = new List<string>();
             pomocnyList.Clear();
+            listUkolu.Clear();
             StreamReader sr = new StreamReader(@"..\..\..\saveFile.txt");
             while (!sr.EndOfStream)
             {
@@ -270,6 +271,7 @@ namespace rop
         private void button10_Click(object sender, EventArgs e)
         {
             List<string> pomocnyList = new List<string>();
+            listUkolu.Clear();
             StreamReader sr = new StreamReader(@"..\..\..\saveFile.txt");
             while (!sr.EndOfStream)
             {
@@ -317,6 +319,97 @@ namespace rop
             }
 
 
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            listUkolu.Clear();
+            listBox1.Items.Clear();
+            List<string> pomocnyList = new List<string>();
+            StreamReader sr = new StreamReader(@"..\..\..\saveFile.txt");
+            while (!sr.EndOfStream)
+            {
+                string line = sr.ReadLine();
+                listUkolu.Add(line);
+            }
+            sr.Close();
+
+
+            
+            for (int i = 0; i < listUkolu.Count; ++i)
+            {
+                string s = listUkolu[i];
+                string[] ukolSplit = s.Split(';');
+                DateTime datum = DateTime.Parse(ukolSplit[3]);
+
+                if(datum == DateTime.Today)
+                {
+                    pomocnyList.Add(s);
+                    listBox1.Items.Add(ukolSplit[0]);
+                }
+            }
+
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            listUkolu.Clear();
+            listBox1.Items.Clear();
+            List<string> pomocnyList = new List<string>();
+            StreamReader sr = new StreamReader(@"..\..\..\saveFile.txt");
+            while (!sr.EndOfStream)
+            {
+                string line = sr.ReadLine();
+                listUkolu.Add(line);
+            }
+            sr.Close();
+
+            for (int i = 0; i < listUkolu.Count; ++i)
+            {
+                string s = listUkolu[i];
+                string[] ukolSplit = s.Split(';');
+                DateTime datum = DateTime.Parse(ukolSplit[3]);
+
+                DayOfWeek aktualniDen = DateTime.Now.DayOfWeek;
+                DateTime zacatekTydne = DateTime.Now.AddDays(-(int)aktualniDen);
+                DateTime konecTydne = zacatekTydne.AddDays(6);
+                
+
+                if (datum >= zacatekTydne && datum <= konecTydne)
+                {
+                    pomocnyList.Add(s);
+                    listBox1.Items.Add(ukolSplit[0]);
+                }
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            listUkolu.Clear();
+            listBox1.Items.Clear();
+            List<string> pomocnyList = new List<string>();
+            StreamReader sr = new StreamReader(@"..\..\..\saveFile.txt");
+            while (!sr.EndOfStream)
+            {
+                string line = sr.ReadLine();
+                listUkolu.Add(line);
+            }
+            sr.Close();
+
+            for (int i = 0; i < listUkolu.Count; ++i)
+            {
+                string s = listUkolu[i];
+                string[] ukolSplit = s.Split(';');
+                DateTime datum = DateTime.Parse(ukolSplit[3]);
+
+
+                if (datum.Month == DateTime.Now.Month)
+                {
+                    pomocnyList.Add(s);
+                    listBox1.Items.Add(ukolSplit[0]);
+                }
+            }
         }
     }
 }
