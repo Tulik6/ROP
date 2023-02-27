@@ -1,5 +1,5 @@
-27.2;Střední;Škola;27.02.2023;x%
-28.2;Střední;Práce;28.02.2023;x%
-2.3;Střední;Zdraví;02.03.2023;x%
-31.3;Střední;Zdraví;31.03.2023;x%
-5.3;Střední;Zdraví;05.03.2023;x%
+9.3;Střední;Práce;09.03.2023;x%
+11.3;Vysoká;Škola;11.03.2023;x%
+12.3;Střední;Škola;12.03.2023;x%
+5.4;Střední;Zdraví;04.04.2023;x%
+27.2;Střední;Zdraví;27.02.2023;x%

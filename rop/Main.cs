@@ -20,7 +20,7 @@ namespace rop
         public Main()
         {
             InitializeComponent();
-            this.Width = 650;
+            this.Width = 750;
             this.Height = 500;
         }
 
@@ -405,6 +405,37 @@ namespace rop
 
 
                 if (datum.Month == DateTime.Now.Month)
+                {
+                    pomocnyList.Add(s);
+                    listBox1.Items.Add(ukolSplit[0]);
+                }
+            }
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            DateTime datumOd = dateTimePicker1.Value.Date;
+            DateTime datumDo = dateTimePicker2.Value.Date;
+
+            listUkolu.Clear();
+            listBox1.Items.Clear();
+            List<string> pomocnyList = new List<string>();
+            StreamReader sr = new StreamReader(@"..\..\..\saveFile.txt");
+            while (!sr.EndOfStream)
+            {
+                string line = sr.ReadLine();
+                listUkolu.Add(line);
+            }
+            sr.Close();
+
+            for (int i = 0; i < listUkolu.Count; ++i)
+            {
+                string s = listUkolu[i];
+                string[] ukolSplit = s.Split(';');
+                DateTime datum = DateTime.Parse(ukolSplit[3]);
+
+
+                if (datum >= datumOd && datum <= datumDo)
                 {
                     pomocnyList.Add(s);
                     listBox1.Items.Add(ukolSplit[0]);
