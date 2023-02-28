@@ -160,7 +160,7 @@ namespace rop
             }
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void button8_Click(object sender, EventArgs e) //Podle %
         {
             List<string> pomocnyList = new List<string>();
             pomocnyList.Clear();
@@ -197,6 +197,9 @@ namespace rop
                 MessageBox.Show(x.ToString());
             }
 
+
+            StreamWriter sw = new StreamWriter(@"..\..\..\saveFile.txt");
+            sw.Write("");
             for (int i = 0; i < pomocnePole.Length; ++i)
             {
 
@@ -207,20 +210,24 @@ namespace rop
                     {
                         string[] ukol = listUkolu[j].Split(';');
                         pomocnyList.Add(ukol[0]);
+                        sw.WriteLine(s);
                         listUkolu.RemoveAt(j);
                     }
                 }
             }
+            sw.Close();
 
             listBox1.Items.Clear();
+            
             for (int i = 0; i < pomocnyList.Count; ++i)
             {
                 listBox1.Items.Add(pomocnyList[i]);
+                
             }
 
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        private void button9_Click(object sender, EventArgs e) //Podle kategorie
         {
             List<string> pomocnyList = new List<string>();
             pomocnyList.Clear();
@@ -232,6 +239,7 @@ namespace rop
                 listUkolu.Add(line);
             }
             sr.Close();
+
 
             for (int i = 0; i < listUkolu.Count; ++i)
             {
@@ -268,7 +276,7 @@ namespace rop
             sr.Close();
         }
 
-        private void button10_Click(object sender, EventArgs e)
+        private void button10_Click(object sender, EventArgs e) //Podle času
         {
             List<string> pomocnyList = new List<string>();
             listUkolu.Clear();
@@ -298,6 +306,9 @@ namespace rop
                 MessageBox.Show(x.ToString());
             }
 
+
+            StreamWriter sw = new StreamWriter(@"..\..\..\saveFile.txt");
+            sw.Write("");
             for (int i = 0; i < poleDat.Length; ++i)
             {
                 for (int j = 0; j < listUkolu.Count; ++j)
@@ -308,9 +319,11 @@ namespace rop
                         string[] ukol = s.Split(';');
                         pomocnyList.Add(ukol[0]);
                         listUkolu.RemoveAt(j);
+                        sw.WriteLine(s);
                     }
                 }
             }
+            sw.Close();
 
             listBox1.Items.Clear();
             foreach (string s in pomocnyList)
@@ -321,7 +334,7 @@ namespace rop
 
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void button7_Click(object sender, EventArgs e) //Den
         {
             listUkolu.Clear();
             listBox1.Items.Clear();
@@ -352,7 +365,7 @@ namespace rop
 
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e) //Týden
         {
             listUkolu.Clear();
             listBox1.Items.Clear();
@@ -384,7 +397,7 @@ namespace rop
             }
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void button6_Click(object sender, EventArgs e) //Měsíc
         {
             listUkolu.Clear();
             listBox1.Items.Clear();
