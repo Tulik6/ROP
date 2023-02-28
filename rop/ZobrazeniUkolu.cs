@@ -16,6 +16,7 @@ namespace rop
         public ZobrazeniUkolu()
         {
             InitializeComponent();
+            
         }
 
         List<string> listUkolu = new List<string>();
@@ -90,14 +91,16 @@ namespace rop
                 sw = new StreamWriter(@"..\..\..\saveFile.txt");
                 listUkolu.RemoveAt(Main.index);
 
-
+                Main.mainListBox.Items.Clear();
                 foreach (string task in listUkolu)
                 {
                     sw.WriteLine(task);
+                    string[] poleUkol = task.Split(';');
+                    Main.mainListBox.Items.Add(poleUkol[0]);
                 }
                 listUkolu.Clear(); //Clear listboxu aby se nevytvářely kopie úkolů
                 sw.Close();
-                zmenaSavu = true;
+
             }
         }
     }

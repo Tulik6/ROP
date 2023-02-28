@@ -17,11 +17,14 @@ namespace rop
 
         public static int index = 0;
         List<string> listUkolu = new List<string>(); //Vložení textu ze souboru do listu pro lehčí zpracování
+
+        public static ListBox mainListBox { get; set; } //Vytvoření public listBoxu aby se dal mazat z druhého formu
         public Main()
         {
             InitializeComponent();
             this.Width = 750;
             this.Height = 500;
+            mainListBox = listBox1;
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
@@ -145,19 +148,7 @@ namespace rop
 
         private void Main_MouseHover(object sender, EventArgs e)
         {
-            if (ZobrazeniUkolu.zmenaSavu == true)
-            {
-                StreamReader sr = new StreamReader(@"..\..\..\saveFile.txt");
-                //Refresh listboxu po upravení úkolu
-                listBox1.Items.Clear();
-                while (!sr.EndOfStream)
-                {
-                    string line = sr.ReadLine();
-                    string[] ukol = line.Split(';');
-                    listBox1.Items.Add(ukol[0]);
-                }
-                sr.Close();
-            }
+           
         }
 
         private void button8_Click(object sender, EventArgs e) //Podle %
