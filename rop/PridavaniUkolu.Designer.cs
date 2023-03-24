@@ -140,7 +140,7 @@
             this.comboBox2.Size = new System.Drawing.Size(179, 21);
             this.comboBox2.TabIndex = 5;
             // 
-            // Form2
+            // PridavaniUkolu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -155,7 +155,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form2";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.Name = "PridavaniUkolu";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);

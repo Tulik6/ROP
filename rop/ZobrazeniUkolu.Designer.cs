@@ -78,6 +78,7 @@
             this.ukolLabel.AutoSize = true;
             this.ukolLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ukolLabel.Location = new System.Drawing.Point(39, 67);
+            this.ukolLabel.MaximumSize = new System.Drawing.Size(300, 0);
             this.ukolLabel.Name = "ukolLabel";
             this.ukolLabel.Size = new System.Drawing.Size(45, 24);
             this.ukolLabel.TabIndex = 1;
@@ -136,7 +137,7 @@
             // trackBar1
             // 
             this.trackBar1.LargeChange = 10;
-            this.trackBar1.Location = new System.Drawing.Point(329, 38);
+            this.trackBar1.Location = new System.Drawing.Point(332, 38);
             this.trackBar1.Maximum = 100;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Orientation = System.Windows.Forms.Orientation.Vertical;
@@ -150,7 +151,7 @@
             // 
             this.splnenoLabel.AutoSize = true;
             this.splnenoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.splnenoLabel.Location = new System.Drawing.Point(368, 177);
+            this.splnenoLabel.Location = new System.Drawing.Point(371, 177);
             this.splnenoLabel.Name = "splnenoLabel";
             this.splnenoLabel.Size = new System.Drawing.Size(79, 29);
             this.splnenoLabel.TabIndex = 4;
@@ -166,7 +167,7 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // Form3
+            // ZobrazeniUkolu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -183,7 +184,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form3";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.Name = "ZobrazeniUkolu";
             this.Text = "Form3";
             this.Load += new System.EventHandler(this.Form3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();

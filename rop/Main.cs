@@ -34,6 +34,7 @@ namespace rop
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            
             //Vytvoření souboru pokud neexistuje
             try
             {
@@ -183,10 +184,10 @@ namespace rop
             Array.Sort(pomocnePole);
             Array.Reverse(pomocnePole);
 
-            foreach (int x in pomocnePole)
+            /*foreach (int x in pomocnePole)
             {
                 MessageBox.Show(x.ToString());
-            }
+            }*/
 
 
             StreamWriter sw = new StreamWriter(@"..\..\..\saveFile.txt");
@@ -292,10 +293,10 @@ namespace rop
             Array.Sort(poleDat);
             //Array.Reverse(poleDat);
 
-            foreach(DateTime x in poleDat)
+            /*foreach(DateTime x in poleDat)
             {
                 MessageBox.Show(x.ToString());
-            }
+            }*/
 
 
             StreamWriter sw = new StreamWriter(@"..\..\..\saveFile.txt");
@@ -445,6 +446,20 @@ namespace rop
                     listBox1.Items.Add(ukolSplit[0]);
                 }
             }
+        }
+
+        private void button11_Click_1(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+            StreamReader sr = new StreamReader(@"..\..\..\saveFile.txt");
+            while (!sr.EndOfStream)
+            {
+                //Zobrazení databáze v listboxu
+                string line = sr.ReadLine();
+                string[] ukol = line.Split(';');
+                listBox1.Items.Add(ukol[0]);
+            }
+            sr.Close();
         }
     }
 }

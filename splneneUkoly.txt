@@ -1,8 +1,0 @@
-asd;Vysoká;Škola;26.02.2023;100
-asff;Nízká;Zdraví;26.02.2023;100
-erger;Nízká;Práce;26.02.2023;100
-wrgewgwg;Střední;Práce;26.02.2023;100
-asdf;Střední;Práce;26.02.2023;100
-5.4;Střední;Zdraví;04.04.2023;100
-24.3;Střední;Škola;24.03.2023;100
-16.3;Střední;Škola;16.03.2023;100

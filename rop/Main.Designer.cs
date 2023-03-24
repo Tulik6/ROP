@@ -45,6 +45,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button12 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -227,11 +228,23 @@
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
+            // button11
+            // 
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.button11.Location = new System.Drawing.Point(368, 376);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(108, 51);
+            this.button11.TabIndex = 18;
+            this.button11.Text = "Všechny úkoly";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click_1);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(771, 527);
+            this.Controls.Add(this.button11);
             this.Controls.Add(this.button12);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -249,6 +262,8 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "Main";
             this.Text = "Řízení úkolů";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -278,6 +293,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button11;
     }
 }
 

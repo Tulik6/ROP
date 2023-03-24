@@ -84,7 +84,7 @@
             // 
             this.ukolTextBox.Location = new System.Drawing.Point(42, 78);
             this.ukolTextBox.Name = "ukolTextBox";
-            this.ukolTextBox.Size = new System.Drawing.Size(335, 20);
+            this.ukolTextBox.Size = new System.Drawing.Size(395, 20);
             this.ukolTextBox.TabIndex = 5;
             // 
             // prioritaComboBox
@@ -140,7 +140,7 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Form4
+            // UpravaUkolu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -155,7 +155,9 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form4";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.Name = "UpravaUkolu";
             this.Text = "Form4";
             this.Load += new System.EventHandler(this.Form4_Load);
             this.ResumeLayout(false);
